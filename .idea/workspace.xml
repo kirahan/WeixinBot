@@ -2,6 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="80af1cc5-1051-4e36-b3ae-eb0c87d47958" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/saved/msgimgs/img_6067315741145178019.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tt.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/.name" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/WeixinBot.iml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/weixin.py" afterPath="$PROJECT_DIR$/weixin.py" />
     </list>
     <ignored path="WeixinBot.iws" />
@@ -43,8 +51,8 @@
       <file leaf-file-name="weixin.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/weixin.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="468" column="25" selection-start-line="468" selection-start-column="23" selection-end-line="468" selection-end-column="25" />
+            <state vertical-scroll-proportion="1.7346648">
+              <caret line="506" column="55" selection-start-line="506" selection-start-column="55" selection-end-line="506" selection-end-column="55" />
               <folding>
                 <element signature="e#38#51#0" expanded="true" />
                 <element signature="e#533#673#0" expanded="false" />
@@ -533,8 +541,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/weixin.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="468" column="25" selection-start-line="468" selection-start-column="23" selection-end-line="468" selection-end-column="25" />
+        <state vertical-scroll-proportion="1.7346648">
+          <caret line="506" column="55" selection-start-line="506" selection-start-column="55" selection-end-line="506" selection-end-column="55" />
           <folding>
             <element signature="e#38#51#0" expanded="true" />
             <element signature="e#533#673#0" expanded="false" />
