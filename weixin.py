@@ -13,6 +13,7 @@ import sys
 import os
 import random
 import multiprocessing
+import threading
 import platform
 import logging
 from collections import defaultdict
@@ -101,7 +102,8 @@ class WebWeixin(object):
         self.autoReplyMode = False
         self.syncHost = ''
         self.user_agent = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/48.0.2564.109 Safari/537.36'
-        self.interactive = False
+        # self.interactive = False
+        self.interactive = True
         self.autoOpen = False
         self.saveFolder = os.path.join(os.getcwd(), 'saved')
         self.saveSubFolders = {'webwxgeticon': 'icons', 'webwxgetheadimg': 'headimgs', 'webwxgetmsgimg': 'msgimgs',
@@ -341,8 +343,7 @@ class WebWeixin(object):
         url = 'https://' + self.syncHost + \
             '/cgi-bin/mmwebwx-bin/synccheck?' + urllib.urlencode(params)
         data = self._get(url)
-        pm = re.search(
-            r'window.synccheck={retcode:"(\d+)",selector:"(\d+)"}', data)
+        pm = re.search(r'window.synccheck={retcode:"(\d+)",selector:"(\d+)"}', data)
         retcode = pm.group(1)
         selector = pm.group(2)
         return [retcode, selector]
@@ -390,7 +391,7 @@ class WebWeixin(object):
         return dic['BaseResponse']['Ret'] == 0
 
     def webwxuploadmedia(self, image_name):
-        url = 'https://file2.wx.qq.com/cgi-bin/mmwebwx-bin/webwxuploadmedia?f=json'
+        url = 'https://file.wx.qq.com/cgi-bin/mmwebwx-bin/webwxuploadmedia?f=json'
         # 计数器
         self.media_count = self.media_count + 1
         # 文件名
@@ -445,14 +446,14 @@ class WebWeixin(object):
         )
 
         headers = {
-            'Host': 'file2.wx.qq.com',
+            'Host': 'file.wx.qq.com',
             'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10.10; rv:42.0) Gecko/20100101 Firefox/42.0',
             'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
             'Accept-Language': 'en-US,en;q=0.5',
             'Accept-Encoding': 'gzip, deflate',
-            'Referer': 'https://wx2.qq.com/',
+            'Referer': 'https://wx.qq.com/',
             'Content-Type': multipart_encoder.content_type,
-            'Origin': 'https://wx2.qq.com',
+            'Origin': 'https://wx.qq.com',
             'Connection': 'keep-alive',
             'Pragma': 'no-cache',
             'Cache-Control': 'no-cache'
@@ -465,7 +466,7 @@ class WebWeixin(object):
         return None
 
     def webwxsendmsgimg(self, user_id, media_id):
-        url = 'https://wx2.qq.com/cgi-bin/mmwebwx-bin/webwxsendmsgimg?fun=async&f=json&pass_ticket=%s' % self.pass_ticket
+        url = 'https://wx.qq.com/cgi-bin/mmwebwx-bin/webwxsendmsgimg?fun=async&f=json&pass_ticket=%s' % self.pass_ticket
         clientMsgId = str(int(time.time() * 1000)) + \
             str(random.random())[:5].replace('.', '')
         data_json = {
@@ -883,11 +884,20 @@ class WebWeixin(object):
             print '[*] 自动回复模式 ... 关闭'
             logging.debug('[*] 自动回复模式 ... 关闭')
 
-        listenProcess = multiprocessing.Process(target=self.listenMsgMode)
-        listenProcess.start()
+        # listenProcess = multiprocessing.Process(target=self.listenMsgMode)
+        # listenProcess.start()
+        # listenProcess.join()
+
+        # listenProcess = multiprocessing.Process(target=self.listenMsgMode)
+        # listenProcess.start()
+
+
 
         while True:
+
+            print "等待输入指令"
             text = raw_input('')
+
             if text == 'quit':
                 listenProcess.terminate()
                 print('[*] 退出微信')
