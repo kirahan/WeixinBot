@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="80af1cc5-1051-4e36-b3ae-eb0c87d47958" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/ContactList.json" afterPath="$PROJECT_DIR$/resources/ContactList.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/PublicUsersList.json" afterPath="$PROJECT_DIR$/resources/PublicUsersList.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/contacts.json" afterPath="$PROJECT_DIR$/resources/contacts.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/weixin.py" afterPath="$PROJECT_DIR$/weixin.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="WeixinBot.iws" />
@@ -37,10 +34,10 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="weixin.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="weixin.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/weixin.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.5965665">
+            <state vertical-scroll-proportion="0.0">
               <caret line="800" column="52" selection-start-line="800" selection-start-column="52" selection-end-line="800" selection-end-column="52" />
               <folding>
                 <element signature="e#38#51#0" expanded="true" />
@@ -97,6 +94,16 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.2827381">
+              <caret line="10" column="3" selection-start-line="10" selection-start-column="3" selection-end-line="10" selection-end-column="3" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="robot.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/robot.py">
           <provider selected="true" editor-type-id="text-editor">
@@ -146,7 +153,6 @@
       <list>
         <option value="$PROJECT_DIR$/addon/base.py" />
         <option value="$PROJECT_DIR$/addon/warcraft.py" />
-        <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/resources/contacts.json" />
         <option value="$PROJECT_DIR$/resources/ContactList.json" />
         <option value="$PROJECT_DIR$/resources/GroupList.json" />
@@ -157,6 +163,7 @@
         <option value="$PROJECT_DIR$/config/plug_config.json" />
         <option value="$PROJECT_DIR$/robot.py" />
         <option value="$PROJECT_DIR$/weixin.py" />
+        <option value="$PROJECT_DIR$/.gitignore" />
       </list>
     </option>
   </component>
@@ -746,14 +753,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.43879908">
-          <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/plugins/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.054363377">
@@ -857,7 +856,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/weixin.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5965665">
+        <state vertical-scroll-proportion="0.0">
           <caret line="800" column="52" selection-start-line="800" selection-start-column="52" selection-end-line="800" selection-end-column="52" />
           <folding>
             <element signature="e#38#51#0" expanded="true" />
@@ -910,6 +909,14 @@
             <element signature="e#38509#38949#0" expanded="false" />
             <element signature="e#38984#39388#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.2827381">
+          <caret line="10" column="3" selection-start-line="10" selection-start-column="3" selection-end-line="10" selection-end-column="3" />
+          <folding />
         </state>
       </provider>
     </entry>
