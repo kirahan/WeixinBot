@@ -13,7 +13,6 @@ import sys
 import os
 import random
 import multiprocessing
-import threading
 import platform
 import logging
 from collections import defaultdict
@@ -250,7 +249,10 @@ class WebWeixin(object):
         print self.base_uri
         url = self.base_uri + '/webwxgetcontact?pass_ticket=%s&skey=%s&r=%s' % (
             self.pass_ticket, self.skey, int(time.time()))
+
         dic = self._post(url, {})
+        with open('resources/contacts.json', 'w') as f:
+            f.write(json.dumps(dic))
 
         self.MemberCount = dic['MemberCount']
         self.MemberList = dic['MemberList']
@@ -274,8 +276,18 @@ class WebWeixin(object):
                 ContactList.remove(Contact)
         self.ContactList = ContactList
 
+        with open('resources/PublicUsersList.json', 'w') as f:  # 公众号/服务号
+            f.write(json.dumps(self.PublicUsersList))
+        with open('resources/GroupList.json', 'w') as f:  # 群聊账号
+            f.write(json.dumps(self.GroupList))
+        with open('resources/SpecialUsersList.json', 'w') as f:  # 特设账号
+            f.write(json.dumps(self.SpecialUsersList))
+        with open('resources/ContactList.json', 'w') as f:   # 其他个人账号
+            f.write(json.dumps(self.ContactList))
         return True
 
+
+    #获取群成员
     def webwxbatchgetcontact(self):
         url = self.base_uri + \
             '/webwxbatchgetcontact?type=ex&r=%s&pass_ticket=%s' % (
@@ -661,12 +673,15 @@ class WebWeixin(object):
             logging.info('%s %s -> %s: %s' % (message_id, srcName.strip(),
                                               dstName.strip(), content.replace('<br/>', '\n')))
 
+
+    # 处理各种各样的消息
     def handleMsg(self, r):
         for msg in r['AddMsgList']:
             print '[*] 你有新的消息，请注意查收'
             logging.debug('[*] 你有新的消息，请注意查收')
 
             if self.DEBUG:
+            # if True:
                 fn = 'msg' + str(int(random.random() * 1000)) + '.json'
                 with open(fn, 'w') as f:
                     f.write(json.dumps(msg))
@@ -866,6 +881,7 @@ class WebWeixin(object):
         self._run('[*] 获取联系人 ... ', self.webwxgetcontact)
         self._echo('[*] 应有 %s 个联系人，读取到联系人 %d 个' %
                    (self.MemberCount, len(self.MemberList)))
+
         print
         self._echo('[*] 共有 %d 个群 | %d 个直接联系人 | %d 个特殊账号 ｜ %d 公众号或服务号' % (len(self.GroupList),
                                                                          len(self.ContactList), len(self.SpecialUsersList), len(self.PublicUsersList)))
@@ -886,40 +902,34 @@ class WebWeixin(object):
 
         # listenProcess = multiprocessing.Process(target=self.listenMsgMode)
         # listenProcess.start()
-        # listenProcess.join()
 
-        # listenProcess = multiprocessing.Process(target=self.listenMsgMode)
-        # listenProcess.start()
-
-
-
-        while True:
-
-            print "等待输入指令"
-            text = raw_input('')
-
-            if text == 'quit':
-                listenProcess.terminate()
-                print('[*] 退出微信')
-                logging.debug('[*] 退出微信')
-                exit()
-            elif text[:2] == '->':
-                [name, word] = text[2:].split(':')
-                if name == 'all':
-                    self.sendMsgToAll(word)
-                else:
-                    self.sendMsg(name, word)
-            elif text[:3] == 'm->':
-                [name, file] = text[3:].split(':')
-                self.sendMsg(name, file, True)
-            elif text[:3] == 'f->':
-                print '发送文件'
-                logging.debug('发送文件')
-            elif text[:3] == 'i->':
-                print '发送图片'
-                [name, file_name] = text[3:].split(':')
-                self.sendImg(name, file_name)
-                logging.debug('发送图片')
+        # while True:
+        #
+        #     print "等待输入指令"
+        #     text = raw_input('')
+        #
+        #     if text == 'quit':
+        #         listenProcess.terminate()
+        #         print('[*] 退出微信')
+        #         logging.debug('[*] 退出微信')
+        #         exit()
+        #     elif text[:2] == '->':
+        #         [name, word] = text[2:].split(':')
+        #         if name == 'all':
+        #             self.sendMsgToAll(word)
+        #         else:
+        #             self.sendMsg(name, word)
+        #     elif text[:3] == 'm->':
+        #         [name, file] = text[3:].split(':')
+        #         self.sendMsg(name, file, True)
+        #     elif text[:3] == 'f->':
+        #         print '发送文件'
+        #         logging.debug('发送文件')
+        #     elif text[:3] == 'i->':
+        #         print '发送图片'
+        #         [name, file_name] = text[3:].split(':')
+        #         self.sendImg(name, file_name)
+        #         logging.debug('发送图片')
 
     def _safe_open(self, path):
         if self.autoOpen:
