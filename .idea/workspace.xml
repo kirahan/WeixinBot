@@ -2,7 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="80af1cc5-1051-4e36-b3ae-eb0c87d47958" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/ContactList.json" afterPath="$PROJECT_DIR$/resources/ContactList.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/PublicUsersList.json" afterPath="$PROJECT_DIR$/resources/PublicUsersList.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/contacts.json" afterPath="$PROJECT_DIR$/resources/contacts.json" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/robot.py" afterPath="$PROJECT_DIR$/robot.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="WeixinBot.iws" />
@@ -34,11 +37,21 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
+      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-7.037037">
+              <caret line="10" column="3" selection-start-line="10" selection-start-column="3" selection-end-line="10" selection-end-column="3" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="weixin.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/weixin.py">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="800" column="52" selection-start-line="800" selection-start-column="52" selection-end-line="800" selection-end-column="52" />
+              <caret line="135" column="20" selection-start-line="135" selection-start-column="16" selection-end-line="135" selection-end-column="20" />
               <folding>
                 <element signature="e#38#51#0" expanded="true" />
                 <element signature="e#516#656#0" expanded="false" />
@@ -46,8 +59,6 @@
                 <element signature="e#1032#1429#0" expanded="false" />
                 <element signature="e#1489#2022#0" expanded="false" />
                 <element signature="e#2056#4244#0" expanded="false" />
-                <element signature="e#4288#4690#0" expanded="false" />
-                <element signature="e#4723#5215#0" expanded="false" />
                 <element signature="e#5250#5403#0" expanded="false" />
                 <element signature="e#5443#5743#0" expanded="false" />
                 <element signature="e#5788#6493#0" expanded="false" />
@@ -94,23 +105,13 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/.gitignore">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.2827381">
-              <caret line="10" column="3" selection-start-line="10" selection-start-column="3" selection-end-line="10" selection-end-column="3" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="robot.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="robot.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/robot.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="14" column="21" selection-start-line="14" selection-start-column="21" selection-end-line="14" selection-end-column="21" />
+            <state vertical-scroll-proportion="0.54363376">
+              <caret line="40" column="39" selection-start-line="40" selection-start-column="39" selection-end-line="40" selection-end-column="39" />
               <folding>
-                <element signature="e#43#56#0" expanded="true" />
+                <element signature="e#44#57#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -161,9 +162,9 @@
         <option value="$PROJECT_DIR$/plugins/msg148.json" />
         <option value="$PROJECT_DIR$/plugins/warcraft.py" />
         <option value="$PROJECT_DIR$/config/plug_config.json" />
-        <option value="$PROJECT_DIR$/robot.py" />
         <option value="$PROJECT_DIR$/weixin.py" />
         <option value="$PROJECT_DIR$/.gitignore" />
+        <option value="$PROJECT_DIR$/robot.py" />
       </list>
     </option>
   </component>
@@ -581,8 +582,6 @@
             <element signature="e#1032#1429#0" expanded="false" />
             <element signature="e#1489#2022#0" expanded="false" />
             <element signature="e#2056#4244#0" expanded="false" />
-            <element signature="e#4288#4690#0" expanded="false" />
-            <element signature="e#4723#5215#0" expanded="false" />
             <element signature="e#5250#5403#0" expanded="false" />
             <element signature="e#5443#5743#0" expanded="false" />
             <element signature="e#5788#6493#0" expanded="false" />
@@ -679,8 +678,6 @@
             <element signature="e#1032#1429#0" expanded="false" />
             <element signature="e#1489#2022#0" expanded="false" />
             <element signature="e#2056#4244#0" expanded="false" />
-            <element signature="e#4288#4690#0" expanded="false" />
-            <element signature="e#4723#5215#0" expanded="false" />
             <element signature="e#5250#5403#0" expanded="false" />
             <element signature="e#5443#5743#0" expanded="false" />
             <element signature="e#5788#6493#0" expanded="false" />
@@ -817,28 +814,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/robot.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="14" column="21" selection-start-line="14" selection-start-column="21" selection-end-line="14" selection-end-column="21" />
-          <folding>
-            <element signature="e#43#56#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/plugins/warcraft.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="10" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config/plug_config.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-8.142858">
-          <caret line="12" column="1" selection-start-line="12" selection-start-column="1" selection-end-line="12" selection-end-column="1" />
           <folding />
         </state>
       </provider>
@@ -854,10 +833,26 @@
         <state />
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-7.037037">
+          <caret line="10" column="3" selection-start-line="10" selection-start-column="3" selection-end-line="10" selection-end-column="3" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/plug_config.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-8.142858">
+          <caret line="12" column="1" selection-start-line="12" selection-start-column="1" selection-end-line="12" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/weixin.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="800" column="52" selection-start-line="800" selection-start-column="52" selection-end-line="800" selection-end-column="52" />
+          <caret line="135" column="20" selection-start-line="135" selection-start-column="16" selection-end-line="135" selection-end-column="20" />
           <folding>
             <element signature="e#38#51#0" expanded="true" />
             <element signature="e#516#656#0" expanded="false" />
@@ -865,8 +860,6 @@
             <element signature="e#1032#1429#0" expanded="false" />
             <element signature="e#1489#2022#0" expanded="false" />
             <element signature="e#2056#4244#0" expanded="false" />
-            <element signature="e#4288#4690#0" expanded="false" />
-            <element signature="e#4723#5215#0" expanded="false" />
             <element signature="e#5250#5403#0" expanded="false" />
             <element signature="e#5443#5743#0" expanded="false" />
             <element signature="e#5788#6493#0" expanded="false" />
@@ -912,11 +905,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
+    <entry file="file://$PROJECT_DIR$/robot.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.2827381">
-          <caret line="10" column="3" selection-start-line="10" selection-start-column="3" selection-end-line="10" selection-end-column="3" />
-          <folding />
+        <state vertical-scroll-proportion="0.54363376">
+          <caret line="40" column="39" selection-start-line="40" selection-start-column="39" selection-end-line="40" selection-end-column="39" />
+          <folding>
+            <element signature="e#44#57#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
