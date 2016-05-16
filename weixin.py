@@ -781,6 +781,7 @@ class WebWeixin(object):
         while True:
             self.lastCheckTs = time.time()
             [retcode, selector] = self.synccheck()
+            print 'retcode: %s, selector: %s' % (retcode, selector)
             if self.DEBUG:
                 print 'retcode: %s, selector: %s' % (retcode, selector)
             logging.debug('retcode: %s, selector: %s' % (retcode, selector))
@@ -797,10 +798,10 @@ class WebWeixin(object):
                     r = self.webwxsync()
                     if r is not None:
                         self.handleMsg(r)
-                elif selector == '6':
+                elif selector == '6':    #并不知道6是指的什么
                     # TODO
-                    redEnvelope += 1
-                    print '[*] 收到疑似红包消息 %d 次' % redEnvelope
+                    # redEnvelope += 1
+                    # print '[*] 收到疑似红包消息 %d 次' % redEnvelope
                     logging.debug('[*] 收到疑似红包消息 %d 次' % redEnvelope)
                 elif selector == '7':
                     playWeChat += 1
