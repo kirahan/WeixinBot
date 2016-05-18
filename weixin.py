@@ -893,13 +893,13 @@ class WebWeixin(object):
             print self
         logging.debug(self)
 
-        if self.interactive and raw_input('[*] 是否开启自动回复模式(y/n): ') == 'y':
-            self.autoReplyMode = True
-            print '[*] 自动回复模式 ... 开启'
-            logging.debug('[*] 自动回复模式 ... 开启')
-        else:
-            print '[*] 自动回复模式 ... 关闭'
-            logging.debug('[*] 自动回复模式 ... 关闭')
+        # if self.interactive and raw_input('[*] 是否开启自动回复模式(y/n): ') == 'y':
+        #     self.autoReplyMode = True
+        #     print '[*] 自动回复模式 ... 开启'
+        #     logging.debug('[*] 自动回复模式 ... 开启')
+        # else:
+        #     print '[*] 自动回复模式 ... 关闭'
+        #     logging.debug('[*] 自动回复模式 ... 关闭')
 
         # listenProcess = multiprocessing.Process(target=self.listenMsgMode)
         # listenProcess.start()

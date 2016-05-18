@@ -1,13 +1,1 @@
-{
-  "default":{
-    "plugin_on": [
-      "base"],
-    "Permission":1
-  },
-  "wow":{
-    "plugin_on":[
-      "base",
-      "warcraft"
-    ]
-  }
-}
+{"default": {"plugin_on": ["base", "rubik_tool", "rubik_scramble"], "Permission": 1}, "@8cd5186bc834b06328575f229777a77c": {"plugin_on": ["base"]}, "wow": {"plugin_on": ["base", "warcraft"]}, "@@35af5b084e9ef489fdbf3537eaebd4e7e288a7d6475cc5749d1b9e9f4b1a63c2": {"plugin_on": ["base", "rubik_tool", "rubik_scramble", "warcraft"]}}
