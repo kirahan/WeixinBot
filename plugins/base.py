@@ -21,6 +21,8 @@ def run(msg):
         return 'command open plugin'+':'+msg.split(' ')[1]
     elif msg.startswith('关闭插件'):
         return 'command close plugin'+':'+msg.split(' ')[1]
+    elif msg.startswith('载入配置'):
+        return 'command load plugin config' + ':' + msg.split(' ')[1]
     else :
         print '[base]未找到匹配值'
         return None

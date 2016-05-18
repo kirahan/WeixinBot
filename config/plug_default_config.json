@@ -1,0 +1,16 @@
+{
+    "default": {
+        "plugin_on": [
+            "base",
+            "rubik_tool",
+            "rubik_scramble"
+        ],
+        "Permission": 1
+    },
+    "wow": {
+        "plugin_on": [
+            "base",
+            "warcraft"
+        ]
+    }
+}
