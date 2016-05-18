@@ -1,6 +1,5 @@
-__author__ = 'hanzhao'
 # encoding:utf-8
-
+__author__ = 'hanzhao'
 import os
 import json
 import requests
@@ -24,6 +23,12 @@ NewCompetition = 'competition'
 
 def run(msg):
     print '[info] 魔方小工具模块载入中。。'
+
+    if '<br/>' in msg:     #为群聊消息时候
+        [FromUser,msg] = msg.split('<br/>')
+    else:                   #为个人消息时候
+        pass
+
     if msg in ['打开粗饼','.粗饼','.cubing']:
         print '[tool]自动回答'
         return 'http://cubingchina.com/'

@@ -9,6 +9,12 @@ import sys
 
 def run(msg):
     print '[info] 基本问答模块载入中。。'
+
+    if '<br/>' in msg:     #为群聊消息时候
+        [FromUser,msg] = msg.split('<br/>')
+    else:                   #为个人消息时候
+        pass
+
     if msg in ['.author','查看作者']:        #查看作者
         print '[base]自动回答'
         return 'kira晗\n QQ:478222961\n'

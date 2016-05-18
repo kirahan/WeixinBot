@@ -6,6 +6,13 @@ import urllib
 
 
 def run(msg):
+
+    if '<br/>' in msg:     #为群聊消息时候
+        [FromUser,msg] = msg.split('<br/>')
+    else:                   #为个人消息时候
+        pass
+
+
     if msg in ['打开英雄榜','.英雄榜']:
         return 'http://www.battlenet.com.cn/wow/zh/'
     if msg.startswith('英雄榜') and ' ' in msg:

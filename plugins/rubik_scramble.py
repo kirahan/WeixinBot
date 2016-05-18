@@ -19,7 +19,13 @@ SCRAMBLE_URL = 'http://www.zhtimer.cn:2014/scramble/.json?='
 
 def run(msg):
     print '[info] 魔方小工具模块载入中。。'
-    print msg
+
+    if '<br/>' in msg:     #为群聊消息时候
+        [FromUser,msg] = msg.split('<br/>')
+    else:                   #为个人消息时候
+        pass
+
+
     if msg in ['.2','222','二阶打乱']:        #
         print '[tool]自动回答'
         puzzle_type = '222'

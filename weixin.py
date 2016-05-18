@@ -309,6 +309,8 @@ class WebWeixin(object):
             MemberList = Contact['MemberList']
             for member in MemberList:
                 self.GroupMemeberList.append(member)
+        with open('resources/GroupMemeberList.json', 'w') as f:   # 群成员
+            f.write(json.dumps(self.GroupMemeberList))
         return True
 
     def getNameById(self, id):
@@ -321,9 +323,23 @@ class WebWeixin(object):
             "List": [{"UserName": id, "EncryChatRoomId": ""}]
         }
         dic = self._post(url, params)
-
         # blabla ...
         return dic['ContactList']
+
+    #获取用户（好友或者非好友都可以）的唯一数字标识符  AttrStatus
+    def getAttrStatusById(self,id):
+        url = self.base_uri + \
+            '/webwxbatchgetcontact?type=ex&r=%s&pass_ticket=%s' % (
+                int(time.time()), self.pass_ticket)
+        params = {
+            'BaseRequest': self.BaseRequest,
+            "Count": 1,
+            "List": [{"UserName": id, "EncryChatRoomId": ""}]
+        }
+        dic = self._post(url, params)
+
+        # blabla ...
+        return dic['ContactList'][0]['AttrStatus']
 
     def testsynccheck(self):
         SyncHost = [
@@ -562,6 +578,11 @@ class WebWeixin(object):
                     MemberList = group['MemberList']
                     for member in MemberList:
                         self.GroupMemeberList.append(member)
+            with open('resources/GroupList.json', 'w') as f:   # 更新群列表
+                f.write(json.dumps(self.GroupList))
+            with open('resources/GroupMemeberList.json', 'w') as f:   # 更新群详细成员
+                f.write(json.dumps(self.GroupMemeberList))
+
         return name
 
     def getUserRemarkName(self, id):
